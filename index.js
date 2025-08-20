@@ -223,38 +223,6 @@ app.get("/products/:id/price-trend",verifyFBToken, async (req, res) => {
   }
 });
 
-     //POST /products/:id/reviews
-  // app.post("/products/:id/reviews", async (req, res) => {
-  //   const productId = req.params.id;
-  //   const { rating, comment } = req.body;
-  //   const user = req.user;
-
-  //   // Validation
-  //   if (!user) {
-  //     return res.status(401).json({ error: "Unauthorized" });
-  //   }
-  //   if (!rating || !comment) {
-  //     return res.status(400).json({ error: "Rating and comment required" });
-  //   }
-
-  //   const review = {
-  //     productId: new ObjectId(productId),
-  //     userId: new ObjectId(user._id),
-  //     userName: user.name,
-  //     userEmail: user.email,
-  //     rating: parseInt(rating),
-  //     comment,
-  //     createdAt: new Date(),
-  //   };
-
-  //   try {
-  //     const result = await reviewsCollection.insertOne(review);
-  //     res.status(201).json({ message: "Review submitted", reviewId: result.insertedId });
-  //   } catch (err) {
-  //     res.status(500).json({ error: "Failed to submit review" });
-  //   }
-  // });
-
          app.post("/products/:id/reviews",verifyFBToken, async (req, res) => {
   const { rating, comment, userName, userEmail } = req.body;
 
