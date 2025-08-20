@@ -1,0 +1,4 @@
+node_modules
+.env
+bazaar-tracker--bd-firebase-adminsdk-fbsvc-9ec5561af7.json
+.vercel
